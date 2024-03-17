@@ -6,8 +6,8 @@ import gestion.Zona;
 
 public class Anfibio extends Animal{
 	private ArrayList<Anfibio> listado= new ArrayList<>();
-	public int ranas;
-	public int salamandras;
+	public static int ranas;
+	public static int salamandras;
 	private String colorPiel;
 	private boolean venenoso;
 	
@@ -41,9 +41,8 @@ public class Anfibio extends Animal{
 		
 	}
 	
-	@override
-	public void movimiento(){
-		
+	public String movimiento(){
+		return "saltar";	
 	}
 	
 	public void crearRana(){

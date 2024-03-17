@@ -62,15 +62,23 @@ public class Animal {
 		return totalAnimales;
 	}
 	
-	public void movimiento() {
-		
+	public String movimiento() {
+		return "desplazarse";
 	}
 	
-	public void totalPorTipo() {
-		
+	public String totalPorTipo() {
+		return "Mamiferos: "+(Mamifero.caballos+Mamifero.leones)+"\n"+
+				"Aves: "+(Ave.halcones+Ave.aguilas)+ "\n"+
+				"Reptiles: "+(Reptil.iguanas+Reptil.serpientes)+"\n"+
+				"Peces: " +(Pez.salmones+Pez.bacalaos)+ "\n"+
+				"Anfibios: "+(Anfibio.ranas+Anfibio.salamandras);
 	}
 	
 	public String toString(){
-		return "hola";
+		if (this.listado.get(0)!=null)
+		return "Mi nomre es "+this.nombre+" tengo una edad de "+this.edad+" habito en "+this.habitat+" y mi genero es "+
+				this.genero+", la zona en la que me ubico es "+this.listado.get(0).getNombre()+", en el "+this.listado.get(0).getZoo().getNombre();
+		else
+			return "Mi nomre es "+this.nombre+" tengo una edad de "+this.edad+" habito en "+this.habitat+" y mi genero es "+this.genero;
 	}
 }
