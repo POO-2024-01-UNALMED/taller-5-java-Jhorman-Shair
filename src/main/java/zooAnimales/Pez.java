@@ -8,6 +8,7 @@ public class Pez extends Animal {
 	public static int bacalaos;
 	private String colorEscamas;
 	private int cantidadAletas;
+	public static int creados;
 	
 	public String getColorEscamas() {
 		return colorEscamas;
@@ -26,28 +27,39 @@ public class Pez extends Animal {
 	}
 
 	public Pez() {
-		
+		creados++;
 	}
 	
 	public Pez(String nombre, int edad, String habitat, String genero, String colorEscamas, int cantidadAletas) {
 		super(nombre, edad, habitat,genero);
 		this.colorEscamas=colorEscamas;
 		this.cantidadAletas=cantidadAletas;
+		creados++;
 	}
 	
-	public void cantidadPeces() {
-		
+	public int cantidadPeces() {
+		return (salmones+bacalaos+creados);
 	}
 	
 	public String movimiento() {
 		return "nadar";
 	}
 	
-	public void crearSalmon() {
-		
+	public static Pez crearSalmon(String nombre, int edad, String genero) {
+		String habitat="oceano";
+		String colorEscamas="rojo";
+		int cantidadAletas=6;
+		Pez a=new Pez(nombre,edad,habitat,genero,colorEscamas,cantidadAletas);
+		salmones++;
+		return a;
 	}
 	
-	public void crearBacalao() {
-		
+	public static Pez crearBacalao(String nombre, int edad, String genero) {
+		String habitat="oceano";
+		String colorEscamas="gris";
+		int cantidadAletas=6;
+		Pez a=new Pez(nombre,edad,habitat,genero,colorEscamas,cantidadAletas);
+		bacalaos++;
+		return a;
 	}
 }
