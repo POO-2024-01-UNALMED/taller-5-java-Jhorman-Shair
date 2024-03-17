@@ -29,6 +29,7 @@ public class Anfibio extends Animal{
 	}
 
 	public Anfibio() {
+		listado.add(this);
 		creados++;
 	}
 	
@@ -36,11 +37,12 @@ public class Anfibio extends Animal{
 		super(nombre, edad, habitat,genero);
 		this.colorPiel=colorPiel;
 		this.venenoso=venenoso;
+		listado.add(this);
 		creados++;
 	}
 	
-	public int cantidadAnfibios() {
-		return (ranas+salamandras+creados);
+	public static int cantidadAnfibios() {
+		return creados;
 	}
 	
 	public String movimiento(){

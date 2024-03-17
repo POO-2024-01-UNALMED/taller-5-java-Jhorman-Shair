@@ -27,6 +27,7 @@ public class Reptil extends Animal {
 	}
 
 	public Reptil() {
+		listado.add(this);
 		creados++;
 	}
 	
@@ -34,11 +35,12 @@ public class Reptil extends Animal {
 		super(nombre, edad, habitat,genero);
 		this.colorEscamas=colorEscamas;
 		this.largoCola=largoCola;
+		listado.add(this);
 		creados++;
 	}
 	
-	public int cantidadReptiles() {
-		return (iguanas+serpientes+creados);
+	public static int cantidadReptiles() {
+		return creados;
 	}
 	
 	public String movimiento() {

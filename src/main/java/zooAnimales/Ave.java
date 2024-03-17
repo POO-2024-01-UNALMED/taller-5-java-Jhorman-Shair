@@ -18,17 +18,19 @@ public class Ave extends Animal {
 	}
 
 	public Ave() {
+		listado.add(this);
 		creados++;
 	}
 	
 	public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas) {
 		super(nombre, edad, habitat,genero);
 		this.colorPlumas=colorPlumas;
+		listado.add(this);
 		creados++;
 	}
 	
-	public int cantidadAves() {
-		return (halcones+aguilas+creados);
+	public static int cantidadAves() {
+		return creados;
 	}
 	
 	public String movimiento() {
